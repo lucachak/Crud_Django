@@ -3,5 +3,24 @@
 {% block title %} <title>Register</title> {% endblock %}
 {% block content %}
 
+<div class="col-md-6 offset-md-3"></div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-warning alert-dismissible fadeshow" role="alert">
+                {% for fields in form %}
+                    {% if fields.errors %}
+                        {{ fields.errors }}
+                    {% endif %}
+                {% endfor %}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>  
+        {% endif %}
 
+        {{ form.as_p}}
+        <br>
+        <button type="submit" class="btn btn-secondary">
+            Register
+        </button>
+    </form>
 {% endblock %}
