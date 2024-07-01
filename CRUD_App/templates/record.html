@@ -19,7 +19,8 @@
             <strong>Id: </strong>#{{ customer_record.id }}<br>
           </p>
           <a href="{% url 'home' %}" class="btn btn-primary">Go Back</a>
-          <a href="{% url 'delete_records' customer_record.id  %}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'delete_record' customer_record.id  %}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'update_records' customer_record.id  %}" class="btn btn-danger">Update</a>
         </div>
     </div>
     <br><br>
